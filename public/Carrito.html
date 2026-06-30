@@ -9,10 +9,17 @@
 </head>
 <body>
   <header class="header">
-    <div class="logo">🔒 Cerrajería <strong>ALBA</strong></div>
-    <nav class="menu">
-      <a href="index.html">Inicio</a>
-      <a href="index.html">Catálogo</a>
+    <div class="promo">Usa el código TECVI para 10% de descuento</div>
+    <nav class="navbar">
+      <div class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-color)"><path d="m21 2-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg>
+        Cerrajería <strong>ALBA</strong>
+      </div>
+      <ul class="nav-links">
+        <a href="index.html">🏠 Inicio</a>
+        <a href="index.html">Catálogo</a>
+        <a href="historial.html" class="btn-ver-pedidos">📦 Mis Pedidos</a>
+      </ul>
     </nav>
   </header>
 
@@ -25,8 +32,8 @@
 
     <div class="total">
       <span>Total: <strong id="total">$0.00</strong></span>
-      <button class="pagar" onclick="confirmarCompra()">Pagar</button>
-      <button class="vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
+      <button class="pagar" onclick="confirmarCompra()">Pagar Ahora</button>
+      <button class="eliminar" onclick="vaciarCarrito()">Vaciar carrito</button>
     </div>
   </main>
 

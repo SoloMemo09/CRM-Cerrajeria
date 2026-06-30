@@ -6,16 +6,22 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <h1>Historial de Pedidos</h1>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="carrito.html">Carrito</a>
-      <a href="login.html">Mi cuenta</a>
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-color)"><path d="m21 2-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg>
+        Cerrajería <strong>ALBA</strong>
+      </div>
+      <ul class="nav-links">
+        <a href="index.html">🏠 Inicio</a>
+        <a href="carrito.html">🛒 Carrito</a>
+        <a href="login.html">Mi cuenta</a>
+      </ul>
     </nav>
   </header>
 
   <main class="tienda-container">
+    <h1 style="text-align: center; margin-bottom: 2rem; font-size: 2rem;">Historial de Pedidos</h1>
     <section id="contenedor-historial" class="productos-grid">
       <!-- Pedidos cargados aquí -->
     </section>
@@ -51,12 +57,14 @@
           pedidoDiv.classList.add('producto');
 
           pedidoDiv.innerHTML = `
-            <h3>Pedido #${pedido.id_pedido}</h3>
-            <p><strong>Fecha:</strong> ${pedido.fecha_pedido}</p>
-            <p><strong>Estado del pedido:</strong> ${pedido.estado_pedido}</p>
-            <p><strong>Total:</strong> $${pedido.total}</p>
-            <p><strong>Dirección de envío:</strong> ${pedido.direccion_envio || 'No registrada'}</p>
-            <p><strong>Estado de envío:</strong> ${pedido.estado_envio || 'Pendiente'}</p>
+            <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 10px;">
+              <h3 style="color: var(--primary-color);">Pedido #${pedido.id_pedido}</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">${pedido.fecha_pedido}</p>
+            </div>
+            <p><strong>Estado:</strong> <span style="color: var(--secondary-color); font-weight: 600;">${pedido.estado_pedido}</span></p>
+            <p><strong>Total:</strong> <span class="precio" style="font-size: 1.1rem; margin-top: 5px;">$${pedido.total}</span></p>
+            <p><strong>Envío:</strong> ${pedido.direccion_envio || 'No registrada'}</p>
+            <p><strong>Estado Envío:</strong> <span style="background: var(--border-color); padding: 2px 8px; border-radius: 12px; font-size: 0.85rem;">${pedido.estado_envio || 'Pendiente'}</span></p>
           `;
 
           contenedor.appendChild(pedidoDiv);
